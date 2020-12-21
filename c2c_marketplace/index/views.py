@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.db.models import Count
 from django.shortcuts import render, get_object_or_404
 
@@ -21,9 +22,18 @@ def index(request,category_slug=None,):
 
 
 def category(request):
+
     return render(request,'product/category.html')
 
 
-
+@login_required
 def post_ads(request):
-    return render(request,'product/post_ads.html')
+    category_list = Category.objects.all()
+    condition_form = forms.ConditionListForm()
+    #condition = Product.CONDITION_TYPE.all()
+
+    context ={
+        'condition_form':condition_form,
+        'category_list':category_list
+    }
+    return render(request,'product/post_ads.html',context)

@@ -7,39 +7,14 @@
 
             {% if user.is_authenticated %}
                 <a class="account" href="{% url 'logout' %}">Logout</a>
+                <a class="account" href="{% url 'dashboard' %}">Dashboard</a>
+                <a class="account" href="{% url 'post_ads' %}">Post Ads</a>
                 {% else %}
                 <a class="account" href="{% url 'login' %}">My Account</a>
             {% endif %}
-        <span class="active uls-trigger">Select language</span>
-<!-- Large modal -->
-        <div class="selectregion">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-            Select Your Region</button>
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    &times;</button>
-                                <h4 class="modal-title" id="myModalLabel">
-                                    Please Choose Your Location</h4>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-            <script>
-            $('#myModal').modal('');
-            </script>
-        </div>
+<!-- Large modal -->
+
     </div>
 		</div>
-	</div>
-	<div class="banner text-center">
-	  <div class="container">
-			<h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with Resale</h1>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-			<a href="{% url 'post_ads' %}">Post Free Ad</a>
-	  </div>
 	</div>
